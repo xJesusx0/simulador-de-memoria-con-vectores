@@ -9,8 +9,10 @@ public class TareaVectorMemoria {
 
         boolean vectorRellenado = false;
         
-        int cantidadFilas = inputIntPositivo("Ingrese la cantidad de filas");
-        int cantidadColumnas = inputIntPositivo("Ingrese la cantidad de columnas");
+        
+        int cantidadFilas = inputTamaño("Ingrese la cantidad de filas");
+        
+        int cantidadColumnas = inputTamaño("Ingrese la cantidad de columnas");
 
         int vectorMemoria[] = new int[posicionInicialEnMemoria + cantidadFilas * cantidadColumnas];
 
@@ -70,7 +72,19 @@ public class TareaVectorMemoria {
                                        }
                 }
                 case 7 ->{
+                    imprimirMatriz(vectorMemoria,cantidadFilas,cantidadColumnas);
+                    System.out.println("--- Primer elemento ---");
+                    int i1 = inputIntPositivo("Ingrese la posicion de la fila del primer elemento");
+                    int j1 = inputIntPositivo("Ingrese la posicion de la columna del primer elemento");
                     
+                    System.out.println("--- Segundo elemento ---");
+                    int i2 = inputIntPositivo("Ingrese la posicion de la fila del segundo elemento");
+                    int j2 = inputIntPositivo("Ingrese la posicion de la columna del segundo elemento");
+                    
+                    int elemento1 = obtenerElemento(vectorMemoria, i1, j1, cantidadColumnas);
+                    int elemento2 = obtenerElemento(vectorMemoria, i2, j2, cantidadColumnas);
+                 
+                    comparar(elemento1,elemento2);
                 }
                 default -> System.out.println("Opción no válida");               
             }

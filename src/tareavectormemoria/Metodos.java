@@ -31,6 +31,24 @@ public class Metodos {
             try {
                 int numero = Integer.parseInt(entrada);
 
+                if (numero > -1) {
+                    return numero;
+                } else {
+                    mostrarError("Ingrese un número mayor a 0, inténtelo de nuevo");
+                }
+
+            } catch (NumberFormatException e) {
+                mostrarError("Entrada inválida, inténtelo de nuevo");
+            }
+        }
+    }
+    public static int inputTamaño(String mensaje) {
+        while (true) {
+            String entrada = input(mensaje);
+
+            try {
+                int numero = Integer.parseInt(entrada);
+
                 if (numero > 0) {
                     return numero;
                 } else {
@@ -168,5 +186,18 @@ public class Metodos {
         }
         int datos[] = {menor, indice};
         return datos;
+    }
+    
+    public static void comparar(int elemento1,int elemento2){
+        if(elemento1 == elemento2){
+            System.out.println("El elemento 1: " + elemento1 + " es igual que el elemento 2: " + elemento2);
+        }
+        if(elemento1 > elemento2){
+            System.out.println("El elemento 1: " + elemento1 + " es mayor que el elemento 2: " + elemento2);
+        }
+        if(elemento1 < elemento2){
+            System.out.println("El elemento 1: " + elemento1 + " es menor que el elemento 2: " + elemento2);
+
+        }
     }
 }
