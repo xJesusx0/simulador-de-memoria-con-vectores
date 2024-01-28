@@ -89,12 +89,12 @@ public class TareaVectorMemoria {
                 case 8 -> {
                     imprimirMatriz(vectorMemoria, cantidadFilas, cantidadColumnas);
                     System.out.println("--- Primer elemento ---");
-                    int i1 = inputIntPositivo("Ingrese la posicion de la fila del primer elemento");
-                    int j1 = inputIntPositivo("Ingrese la posicion de la columna del primer elemento");
+                    int i1 = inputIntPositivo("Ingrese el indice de la fila del primer elemento");
+                    int j1 = inputIntPositivo("Ingrese el indice de la columna del primer elemento");
 
                     System.out.println("--- Segundo elemento ---");
-                    int i2 = inputIntPositivo("Ingrese la posicion de la fila del segundo elemento");
-                    int j2 = inputIntPositivo("Ingrese la posicion de la columna del segundo elemento");
+                    int i2 = inputIntPositivo("Ingrese el indice de la fila del segundo elemento");
+                    int j2 = inputIntPositivo("Ingrese el indice de la columna del segundo elemento");
 
                     int elemento1 = obtenerElemento(vectorMemoria, i1, j1, cantidadColumnas);
                     int elemento2 = obtenerElemento(vectorMemoria, i2, j2, cantidadColumnas);
