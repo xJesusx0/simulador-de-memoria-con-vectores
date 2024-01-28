@@ -139,7 +139,8 @@ public class Metodos {
         System.out.println("4 - Ver todas las sumatorias");
         System.out.println("5 - Ver la sumatoria mayor");
         System.out.println("6 - Ver la sumatoria menor");
-        System.out.println("7 - Seleccionar 2 elementos de la matriz y compararlos");
+        System.out.println("7 - Encontrar la sumatoria mayor entre la primera y la ultima columna");
+        System.out.println("8 - Seleccionar 2 elementos de la matriz y compararlos");
     }
 
     public static void imprimirMatriz(int[] vector, int cantidadFilas, int cantidadColumnas) {
@@ -161,31 +162,35 @@ public class Metodos {
         }
         return sumatorias;
     }
+    
+    public static int[] obtenerSumatoriasEntrePrimerayUltima(int[] vector, int cantidadFilas, int cantidadColumnas) {
+        if(cantidadColumnas < 3){return null;}
+        int sumatorias[] = new int[cantidadColumnas];
+        for (int j = 1; j < cantidadColumnas - 1; j++) {
+            sumatorias[j-1] = sumatoriaColumna(vector, j, cantidadFilas, cantidadColumnas);
 
-    public static int[] obtenerMayor(int[] vector) {
+        }
+        return sumatorias;
+    }
+    
+    public static int obtenerMayor(int[] vector) {
         int mayor = vector[0];
-        int indice = 0;
         for (int i = 1; i < vector.length; i++) {
             if (vector[i] > mayor) {
-                indice = i;
                 mayor = vector[i];
             }
         }
-        int datos[] = {mayor, indice};
-        return datos;
+        return mayor;
     }
 
-    public static int[] obtenerMenor(int[] vector) {
+    public static int obtenerMenor(int[] vector) {
         int menor = vector[0];
-        int indice = 0;
         for (int i = 1; i < vector.length; i++) {
             if (vector[i] < menor) {
-                indice = i;
                 menor = vector[i];
             }
         }
-        int datos[] = {menor, indice};
-        return datos;
+        return menor;
     }
     
     public static void comparar(int elemento1,int elemento2){
@@ -199,5 +204,15 @@ public class Metodos {
             System.out.println("El elemento 1: " + elemento1 + " es menor que el elemento 2: " + elemento2);
 
         }
+    }
+    public static void encontrarRepetidos(int[] vector,int numero){
+        String indices = "";
+        for(int i = 0 ; i < vector.length ; i++){
+            if(numero == vector[i]){
+                indices += (i + " ");
+            }
+        }
+        System.out.println("El valor " + numero + " se encuentra en las sumatorias de las columnas con indices " + indices);
+    
     }
 }
